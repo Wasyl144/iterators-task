@@ -6,7 +6,7 @@ import utils.FileUtils
 
 
 object Main extends App {
-  val logger: Logger = Logger("Main")
+  val logger: Logger = Logger(getClass.getName)
   val config: AppConfig = ConfigSource.default.at("app").loadOrThrow[AppConfig]
   val filePath: Option[String] = FileUtils.validateArgs(args.toList)
 
@@ -14,5 +14,6 @@ object Main extends App {
   logger.debug("test")
 
 
-  val app = new Application(config = config)
+  val app = new Application(config = config, filePath)
+  app.run()
 }

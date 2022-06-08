@@ -30,16 +30,20 @@ val loggBackend = "1.2.10"
 val nlpVersion = "4.4.0"
 val pureconfigVersion = "0.17.1"
 val scalatestVersion = "3.2.12"
+val AkkaVersion = "2.6.19"
 
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules" %% "scala-parser-combinators" % "2.1.1",
+  "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
+  "com.typesafe.akka" %% "akka-actor" % AkkaVersion,
+  "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
+  "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2",
   "com.typesafe.scala-logging" %% "scala-logging" % scalaloggingVersion,
   "ch.qos.logback" % "logback-classic" % loggBackend % Runtime,
   "edu.stanford.nlp" % "stanford-corenlp" % nlpVersion,
   "edu.stanford.nlp" % "stanford-corenlp" % nlpVersion classifier("models"),
   "com.github.pureconfig" %% "pureconfig" % pureconfigVersion,
   "org.scalatest" %% "scalatest" % scalatestVersion % "test",
-  "org.scalactic" %% "scalactic" % scalatestVersion
+  "org.scalactic" %% "scalactic" % scalatestVersion,
 )
 
 javaOptions += "-Xmx5G"

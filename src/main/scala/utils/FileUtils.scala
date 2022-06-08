@@ -13,4 +13,8 @@ object FileUtils {
   def validatePath(path: String): Boolean = {
     new File(path).exists()
   }
+
+  def readFile(path: String): Unit = {
+
+  }
 }
