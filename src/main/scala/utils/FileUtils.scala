@@ -1,11 +1,11 @@
-package support
+package utils
 
 import java.io.File
 
-object IOService {
+object FileUtils {
   def validateArgs(argList: List[String]): Option[String] = {
     argList match {
-      case firstArg :: _ => Some(firstArg).filter(IOService.validatePath)
+      case firstArg :: _ => Some(firstArg).filter(FileUtils.validatePath)
       case (_) => None
     }
   }

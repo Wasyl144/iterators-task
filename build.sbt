@@ -25,15 +25,16 @@ version := "1.0"
 // Want to use a published library in your project?
 // You can define other libraries as dependencies in your build like this:
 
-val slf4jVersion = "1.7.36"
+val scalaloggingVersion = "3.9.2"
+val loggBackend = "1.2.10"
 val nlpVersion = "4.4.0"
 val pureconfigVersion = "0.17.1"
 val scalatestVersion = "3.2.12"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-parser-combinators" % "2.1.1",
-  "org.slf4j" % "slf4j-api" % slf4jVersion,
-  "org.slf4j" % "slf4j-simple" % slf4jVersion,
+  "com.typesafe.scala-logging" %% "scala-logging" % scalaloggingVersion,
+  "ch.qos.logback" % "logback-classic" % loggBackend % Runtime,
   "edu.stanford.nlp" % "stanford-corenlp" % nlpVersion,
   "edu.stanford.nlp" % "stanford-corenlp" % nlpVersion classifier("models"),
   "com.github.pureconfig" %% "pureconfig" % pureconfigVersion,

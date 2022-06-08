@@ -1,9 +1,7 @@
 package classes
 
-import org.slf4j.Logger
-
-class Application(val config: AppConfig, logger: Logger) {
+class Application(val config: AppConfig) {
   def run(): Unit = {
-    this.logger.info("test")
+
   }
 }
