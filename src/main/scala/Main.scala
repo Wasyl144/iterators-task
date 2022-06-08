@@ -1,23 +1,16 @@
-import org.slf4j.LoggerFactory
-import java.io.File
+import classes.{AppConfig, Application}
+import org.slf4j.{Logger, LoggerFactory, Marker}
 import pureconfig._
 import pureconfig.generic.auto._
+import support.IOService
 
 
 object Main extends App {
-  val logger = LoggerFactory.getLogger(getClass().getSimpleName())
+  val logger: Logger = LoggerFactory.getLogger(getClass().getSimpleName())
   val config: AppConfig = ConfigSource.default.at("app").loadOrThrow[AppConfig]
+  val filePath: Option[String] = IOService.validateArgs(args.toList)
 
-  val file = args.length match {
-    case 0 => "Lipex"
-    case _ => if (new File(args(0)).exists()) {
-      args(0)
-    } else {
-      ""
-    }
-  }
-
-  println(file)
+  println(filePath)
 
 
   val app = new Application(config = config, logger = logger)

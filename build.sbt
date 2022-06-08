@@ -28,6 +28,7 @@ version := "1.0"
 val slf4jVersion = "1.7.36"
 val nlpVersion = "4.4.0"
 val pureconfigVersion = "0.17.1"
+val scalatestVersion = "3.2.12"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-parser-combinators" % "2.1.1",
@@ -35,7 +36,9 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-simple" % slf4jVersion,
   "edu.stanford.nlp" % "stanford-corenlp" % nlpVersion,
   "edu.stanford.nlp" % "stanford-corenlp" % nlpVersion classifier("models"),
-  "com.github.pureconfig" %% "pureconfig" % pureconfigVersion
+  "com.github.pureconfig" %% "pureconfig" % pureconfigVersion,
+  "org.scalatest" %% "scalatest" % scalatestVersion % "test",
+  "org.scalactic" %% "scalactic" % scalatestVersion
 )
 
 javaOptions += "-Xmx5G"

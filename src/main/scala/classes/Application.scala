@@ -1,3 +1,5 @@
+package classes
+
 import org.slf4j.Logger
 
 class Application(val config: AppConfig, logger: Logger) {
