@@ -1,3 +1,3 @@
 package classes
 
-final case class AppConfig(ytApiUri: String, wikiApiUri: String)
+final case class AppConfig(ytApiUri: String, wikiApiUri: String, importer: String)
